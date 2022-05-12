@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+    \coordinate (a) at (0,0);
+    \coordinate (b) at (4,1);
+    \coordinate (c) at (1,-1);
+    \coordinate (o) at (-4,-2);
+    
+    \draw[name path=circleA] (a) circle (2.5cm);
+    
+    \node [black] at (a) {\textbullet};
+    \node [black] at (b) {\textbullet};
+    \node (D) at ($(b)+(0.8,0.1)$) {$(x,y)$};
+    \node (A) at ($(a)+(0,1)$) {Κύλινδρος};
+    \draw[-latex] (90:0.5) arc (90:290:0.5) node[midway, left=0.1cm]{$\Gamma$};
+    \draw[-latex] (a) -- (b) node[midway, above=0.1cm]{$r$};
+    \draw[-latex] (a) -- ($(a)+(1.95,-1.5)$) node[midway, above=0.05cm]{$R$};
+    \draw[dashed] (a) -- ($(a) + (5,0)$) node[midway, below=0.1cm]{};
+    \draw[-latex] (0:3.5) arc (0:14:3.5) node[midway, right=0.1cm]{$\theta$};
+    \draw[-{Stealth[length=3mm, width=2mm]}] ($(a) - (5,0)$) -- ($(a) - (3,0)$) node[midway, above=0.1cm]{$U_0$};
+    
+    \node [black] at (o) {\textbullet};
+    
+    \draw[-latex] (o) --++ (1,0) node[midway, below=0.06cm]{$x$};
+    \draw[-latex] (o) --++ (0,1) node[midway, left=0.06cm]{$y$};
+    \end{tikzpicture}

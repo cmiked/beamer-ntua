@@ -1,0 +1,114 @@
+\ProvidesPackage{beamerthementua}[]
+
+
+
+\usepackage{xgreek}
+\usepackage[Greek,Latin]{ucharclasses}
+\setTransitionsForGreek{\setlanguage{greek}}{\setlanguage{english}}
+\usepackage{tikz}
+\usepackage{amsmath,amssymb, unicode-math}
+\usepackage{epstopdf}
+
+\usepackage{pgfplots}
+\usepackage{fontspec}
+
+
+%--------------FONTS--------------
+%\setmainfont{NewComputerModern10} % substitute with any font that exists on your system
+\setsansfont{NewComputerModern10} % substitute with any font that exists on your system
+%\setmonofont{NewComputerModern10} % substitute with any font that exists on your system
+\usefonttheme{professionalfonts}
+
+
+
+% vertical separator macro
+\newcommand{\vsep}{
+  \column{0.0\textwidth}
+    \begin{tikzpicture}
+      \draw[very thick,black!10] (0,0) -- (0,7.3);
+    \end{tikzpicture}
+}
+
+% More space between lines in align
+\setlength{\mathindent}{0pt}
+\setlength{\unitlength}{1cm}
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+\ProcessOptionsBeamer
+
+
+
+\mode<presentation>
+
+\usetheme{Boadilla}
+\useoutertheme[footline=authorinstitutetitle]{miniframes}
+\useinnertheme{rectangles}
+\usecolortheme{seagull}
+\usecolortheme{ntua}
+%--------MARGINS---------%
+\setbeamersize{text margin left=10mm,text margin right=10mm} 
+%\let\Tiny=\tiny
+
+\setbeamertemplate{blocks}[rounded]
+
+\setbeamertemplate{frametitle}
+ 	{ 
+  \begin{minipage}[c]{\columnwidth}
+    \begin{picture}(12.8,0.7651)(0,0)
+      \put(-0.4,1.2){           \begin{beamercolorbox}[wd=\textwidth,left
+ ]{frametitle}
+             \usebeamerfont{frametitle}
+             \usebeamercolor[fg]{frametitle} {\bf \insertframetitle}
+           \end{beamercolorbox}}
+    \end{picture}
+  \end{minipage}
+  \vspace{-1cm}
+ 	}
+
+
+
+% Definition Kopfleiste
+
+\setbeamertemplate{headline}
+{
+  \vspace{0.1cm}
+  \begin{minipage}[c]{\columnwidth}
+    \begin{picture}(12.8,0.7651)(0,0)
+      \put(14.5,-0.02){\includegraphics[width=0.8cm]{ntualogo.png}}
+      %\put(11.3,0){\includegraphics[width=1.4cm]{logo-cd.pdf}}
+      \put(5.761,0.02){ %9.5
+        \begin{minipage}[t]{6cm}
+          \begin{flushright}
+          \end{flushright}
+        \end{minipage}}%
+    \end{picture}    
+  \end{minipage}%
+  \vspace{0.1cm}
+
+  \begin{beamercolorbox}[ht=0.2ex,dp=1.125ex,%
+    leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}
+    \leavevmode{\usebeamerfont{author in head/foot}%
+    \insertsection $\;\;\;$\insertsubsection}
+    \hfill%
+    {}%
+  \end{beamercolorbox}%
+}
+
+% Definition Fu�eiste
+
+\setbeamertemplate{footline}
+{%
+  \begin{beamercolorbox}[ht=3ex,dp=1.ex,%
+    leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}
+    \leavevmode{\usebeamerfont{author in head/foot}%
+      \scriptsize \insertshortauthor}
+    \hspace{3.7cm}
+    \scriptsize \insertshortsubtitle
+    \hfill%
+    {\insertframenumber}%
+\end{beamercolorbox}%
+}
+
+
+
+\mode
+<all>
